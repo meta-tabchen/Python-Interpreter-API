@@ -1,0 +1,53 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Python",
+    "description": "Python code nterpreter",
+    "version": "v2.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://0.0.0.0:8826"
+    }
+  ],
+  "paths": {
+    "/python": {
+      "post": {
+        "description": "Python Code Execution, can be used to execute python code. Alway put the result as the variable `answer`, for example\n\n```python\nfrom sympy import *\nanswer = 1+1\n```",
+        "operationId": "Python",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "input": {
+                    "type": "string",
+                    "description": "Computation input"
+                  }
+                },
+                "required": ["input"]
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Computation results successfully retrieved"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {}
+  }
+}

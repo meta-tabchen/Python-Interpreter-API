@@ -1,0 +1,10 @@
+fastapi
+requests
+jupyter_client
+matplotlib
+ipython<=8.12
+uvicorn
+pandas
+numpy
+seaborn
+sympy
